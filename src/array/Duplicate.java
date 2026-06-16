@@ -1,12 +1,12 @@
-package basic;
+package array;
 import java.util.*;
-public class Secondlargelem 
+public class Duplicate 
 {
-    @SuppressWarnings("ConvertToTryWithResources")
+
+    @SuppressWarnings({"ConvertToTryWithResources", "UnnecessaryContinue"})
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
-
         System.out.println("Enter the no of elements");
         int n=sc.nextInt();
 
@@ -17,23 +17,25 @@ public class Secondlargelem
         {
             a[i]=sc.nextInt();
         }
-        System.out.println("the second largest element is:");
-        int large=a[0];
-        int secondlarge=-1;
+        int index=0;
         for(int i=1;i<n;i++)
         {
-            if(a[i]>large)
+            if(a[i]==a[i-1])
             {
-                secondlarge=large;
-                large=a[i];
+                continue;
             }
-            if((a[i]>secondlarge)&&(a[i]<large))
+            else
             {
-                secondlarge=a[i];
+                a[index+1]=a[i];
+                index++;
             }
+
         }
-        System.out.println(secondlarge);
+        System.out.println("the sorted array:");
+        for(int i=0;i<index+1;i++)
+        {
+            System.out.println(a[i]);
+        }
         sc.close();
     }
-    
 }

@@ -1,9 +1,8 @@
-package basic;
+package array;
 import java.util.*;
-public class Duplicate 
+public class MoveZeroes 
 {
-
-    @SuppressWarnings({"ConvertToTryWithResources", "UnnecessaryContinue"})
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
@@ -18,21 +17,20 @@ public class Duplicate
             a[i]=sc.nextInt();
         }
         int index=0;
-        for(int i=1;i<n;i++)
+        for(int i=0;i<n;i++)
         {
-            if(a[i]==a[i-1])
+            if(a[i]!=0)
             {
-                continue;
-            }
-            else
-            {
-                a[index+1]=a[i];
+                a[index]=a[i];
                 index++;
             }
-
         }
-        System.out.println("the sorted array:");
-        for(int i=0;i<index+1;i++)
+        for(int i=index;i<n;i++)
+        {
+            a[i]=0;
+        }
+        System.out.println("the array:");
+        for(int i=0;i<n;i++)
         {
             System.out.println(a[i]);
         }

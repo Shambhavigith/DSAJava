@@ -1,8 +1,7 @@
-package basic;
+package array;
+import java.util.*;
 
-import java.util.Scanner;
-
-public class SortedArr 
+public class Largestelem 
 {
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args)
@@ -19,27 +18,17 @@ public class SortedArr
         {
             a[i]=sc.nextInt();
         }
-        int prev=a[0];
-        boolean flag=false;
+        System.out.println("the largest element is:");
+        int large=a[0];
         for(int i=1;i<n;i++)
         {
-            int curr=a[i];
-            
-            if(curr>=prev)
+            if(a[i]>large)
             {
-                prev=curr;
-                continue;
+                large=a[i];
             }
-            else
-            {
-                System.out.println("Unsorted array");
-                flag=true;
-            }
-            if(flag)
-                break;
         }
-        if(!flag)
-            System.out.println("sorted array");
+        System.out.println(large);
         sc.close();
     }
+    
 }
